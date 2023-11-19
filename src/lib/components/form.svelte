@@ -27,32 +27,35 @@
 <div class="card bg-surface-50-900-token w-3/5 border-r-4 border-primary-500 px-4 py-8 shadow-xl">
 	<div class="flex h-full w-full flex-col items-center">
 		<p class="text-surface mb-4 mt-2 text-2xl font-bold text-primary-500 md:text-3xl lg:text-4xl">{title}</p>
-		<div class="w-2/3">
-			<label class="label">
-				<span>Indicador</span>
-				<input
-					class="input text-center"
-					title="Input (readonly)"
-					type="text"
-					value={indicatorKey}
-					readonly={true}
-					tabindex="-1"
-				/>
-			</label>
+		<div class="grid grid-cols-2 gap-4">
+			<div>
+				<label class="label">
+					<span>Chave</span>
+					<input
+						class="input w-full text-center"
+						title="Input (readonly)"
+						type="text"
+						value={odsKey}
+						readonly={true}
+						tabindex="-1"
+					/>
+				</label>
+			</div>
+			<div>
+				<label class="label">
+					<span>Indicador</span>
+					<input
+						class="input w-full text-center"
+						title="Input (readonly)"
+						type="text"
+						value={indicatorKey}
+						readonly={true}
+						tabindex="-1"
+					/>
+				</label>
+			</div>
 		</div>
-		<div class="w-2/3">
-			<label class="label">
-				<span>Chave</span>
-				<input
-					class="input text-center"
-					title="Input (readonly)"
-					type="text"
-					value={odsKey}
-					readonly={true}
-					tabindex="-1"
-				/>
-			</label>
-		</div>
+
 		<div class="w-2/3">
 			<label class="label">
 				<span>Descrição</span>
