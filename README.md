@@ -18,11 +18,13 @@ Este projeto utiliza uma série de tecnologias e ferramentas para o desenvolvime
 - **vite-plugin-tailwind-purgecss (0.1.3)**: Plugin para remover CSS não utilizado com TailwindCSS.
 - **@tailwindcss/typography (0.5.10)** e **@tailwindcss/forms (0.5.7)**: Plugins do TailwindCSS para tipografia e estilização de formulários.
 
-```
 
 ## Para rodar o projeto:
 
 - 1° Clone o repositório;
+```bash
+git clone https://github.com/peargenfiap/gs-micr-2sem-front.git
+```
 - 2° Instale todas as dependências do projeto;
 ```bash
 npm install
