@@ -41,27 +41,18 @@
 			interactive={true}
 			on:selected={tableSelectionHandler}
 		/>
+	{:else}
+		<div
+			class="relative mt-56 flex items-center justify-center rounded border border-red-400 bg-red-100 px-4 py-3 text-center text-red-700"
+			role="alert"
+		>
+			<strong class="mr-2 font-bold">Ops! </strong>
+			<span class="block sm:inline"> Desculpe, não foi possível carregar a tabela.</span>
+		</div>
 	{/if}
 </div>
 
 <style lang="postcss">
-	figure {
-		@apply relative flex flex-col;
-	}
-
-	figure svg,
-	.img-bg {
-		@apply h-64 w-64 md:h-80 md:w-80;
-	}
-
-	.img-bg {
-		@apply absolute z-[-1] rounded-full blur-[50px] transition-all;
-
-		animation:
-			pulse 5s cubic-bezier(0, 0, 0, 0.5) infinite,
-			glow 5s linear infinite;
-	}
-
 	@keyframes glow {
 		0% {
 			@apply bg-primary-400/50;
