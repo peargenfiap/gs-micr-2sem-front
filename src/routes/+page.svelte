@@ -25,12 +25,10 @@
 	}
 
 	function tableSelectionHandler(event: CustomEvent) {
-		console.log('event', event);
-
-		const ind: any = replaceNumbersWithSpecificKeys(event.detail);
+		const ind: IIndicator = replaceNumbersWithSpecificKeys(event.detail);
 
 		const selectedRowData = sourceData?.find((indicator) => indicator.indicatorKey === ind.indicatorKey);
-		console.log(selectedRowData);
+
 		modalStore.trigger({
 			title: 'Detalhes do Indicador',
 			type: 'component',
@@ -47,14 +45,17 @@
 		});
 	}
 
-	function replaceNumbersWithSpecificKeys(obj: any) {
-		const indicator: any = {};
-		const keys = ['indicatorKey', 'indicatorDescription', 'indicatorName', 'odsKey'];
+	function replaceNumbersWithSpecificKeys(obj: Record<number, string>): IIndicator {
+		const indicator: Partial<IIndicator> = {};
+		const keys: Array<keyof IIndicator> = ['indicatorKey', 'indicatorDescription', 'indicatorName', 'odsKey'];
 
 		keys.forEach((key, index) => {
-			indicator[key] = obj[index];
+			if (Object.prototype.hasOwnProperty.call(obj, index)) {
+				indicator[key] = obj[index];
+			}
 		});
-		return indicator;
+
+		return indicator as IIndicator;
 	}
 </script>
 
