@@ -1,5 +1,5 @@
 <script lang="ts">
-	const integrantes = [
+	const integrantes: { nome: string; rm: string }[] = [
 		{ nome: 'Felipe Otto', rm: '89108' },
 		{ nome: 'Pedro Argentati', rm: '88246' },
 		{ nome: 'Rafael Tannous', rm: '87486' },
