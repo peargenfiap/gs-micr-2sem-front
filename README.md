@@ -43,5 +43,5 @@ npm run dev -- --open
 ![image](https://github.com/peargenfiap/gs-micr-2sem-front/assets/115407377/3d91fba6-cb0b-40aa-8c16-d459f9935765)
 
 # Métricas de Indicadores (Modal):
-![image](https://github.com/peargenfiap/gs-micr-2sem-front/assets/115407377/168a4689-5c92-4cf1-853c-e31b580e6d1a)
+![image](https://github.com/peargenfiap/gs-micr-2sem-front/assets/115407377/69a4cdb1-9560-4fa9-bbb8-e2411faa7ad8)
 
