@@ -1,22 +1,36 @@
-# create-svelte
+# Global Solution - Microservices 2° Semestre
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Integrantes
+- Pedro Argentati - RM: 88246
+- Felipe Otto - RM: 89108
+- Rafael Tannous - RM: 87486
 
-## Creating a project
+## Tecnologia Utilizada
 
-If you're seeing this, you've probably already done this step. Congrats!
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
 
-# create a new project in my-app
-npm create svelte@latest my-app
+Este projeto utiliza uma série de tecnologias e ferramentas para o desenvolvimento de microserviços eficientes e modernos. Abaixo está uma lista das principais dependências de desenvolvimento (`devDependencies`) e uma breve explicação de cada uma:
+
+	#Frameworks e Linguagens
+	- **Svelte**
+	- **TypeScript**
+
+- **svelte (^4.0.5)**: Framework de componentes para construir interfaces de usuário web.
+- **typescript (^5.0.0)**: Um superset de JavaScript que adiciona tipos estáticos.
+- **@skeletonlabs/skeleton (2.5.0)** e **@skeletonlabs/tw-plugin (0.2.4)**: Frameworks e plugins para design e estilização.
+- **vite-plugin-tailwind-purgecss (0.1.3)**: Plugin para remover CSS não utilizado com TailwindCSS.
+- **@tailwindcss/typography (0.5.10)** e **@tailwindcss/forms (0.5.7)**: Plugins do TailwindCSS para tipografia e estilização de formulários.
+
 ```
 
-## Developing
+## Para rodar o projeto:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- 1° Clone o repositório;
+- 2° Instale todas as dependências do projeto;
+```bash
+npm install
+```
+- 3° Rode a aplicação
 
 ```bash
 npm run dev
@@ -24,15 +38,3 @@ npm run dev
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
 ```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
