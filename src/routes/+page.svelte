@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { Table, tableMapperValues, type TableSource } from '@skeletonlabs/skeleton';
 	import bodyImg from '../assets/body-img.svg';
-	import { getIndicators } from '../requests';
 	import type IIndicator from '../interfaces/Indicator.model';
 	import { onMount } from 'svelte';
+	import { IndicatorApi } from '../server/requests/indicators.api';
 
 	let sourceData: IIndicator[] | undefined = undefined;
 
 	onMount(async () => {
-		sourceData = await getIndicators();
+		sourceData = await IndicatorApi.list();
 	});
 
 	let tableSimple: TableSource;
