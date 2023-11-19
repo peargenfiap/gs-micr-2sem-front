@@ -5,12 +5,14 @@
 	import type IIndicator from '../interfaces/Indicator.model';
 	import { onMount } from 'svelte';
 	import { IndicatorApi } from '../server/requests/indicators.api';
+	import { Utils } from '../server/services/utils/utils';
 	initializeStores();
 
 	let sourceData: IIndicator[] | undefined = undefined;
 
 	onMount(async () => {
 		sourceData = await IndicatorApi.list();
+		console.log(sourceData);
 	});
 
 	const modalStore = getModalStore();
@@ -25,7 +27,7 @@
 	}
 
 	function tableSelectionHandler(event: CustomEvent) {
-		const ind: IIndicator = replaceNumbersWithSpecificKeys(event.detail);
+		const ind: IIndicator = Utils.replaceNumbersWithSpecificKeys(event.detail);
 
 		const selectedRowData = sourceData?.find((indicator) => indicator.indicatorKey === ind.indicatorKey);
 
@@ -43,19 +45,6 @@
 				},
 			},
 		});
-	}
-
-	function replaceNumbersWithSpecificKeys(obj: Record<number, string>): IIndicator {
-		const indicator: Partial<IIndicator> = {};
-		const keys: Array<keyof IIndicator> = ['indicatorKey', 'indicatorDescription', 'indicatorName', 'odsKey'];
-
-		keys.forEach((key, index) => {
-			if (Object.prototype.hasOwnProperty.call(obj, index)) {
-				indicator[key] = obj[index];
-			}
-		});
-
-		return indicator as IIndicator;
 	}
 </script>
 
