@@ -1,4 +1,5 @@
 import type IIndicator from '../../../interfaces/Indicator.model';
+import type IConsume from '../../../interfaces/consume.model';
 
 export class Utils {
 	/**
@@ -25,5 +26,9 @@ export class Utils {
 		});
 
 		return indicator as IIndicator;
+	}
+
+	public static somarConsumeQuantity(consumes: IConsume[]): number {
+		return consumes.reduce((acc, current) => acc + current.consumeQuantity, 0);
 	}
 }

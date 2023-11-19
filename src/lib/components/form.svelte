@@ -2,6 +2,7 @@
 	import Tableerror from './tableerror.svelte';
 	import { Table, tableMapperValues, type TableSource } from '@skeletonlabs/skeleton';
 	import type IConsume from '../../interfaces/consume.model';
+	import { Utils } from '../../server/services/utils/utils';
 
 	export let title: string = 'Detalhes';
 	export let indicatorKey: string;
@@ -12,9 +13,11 @@
 	export let sourceData: IConsume[] | undefined;
 
 	$: if (sourceData) {
+		const total: number = Utils.somarConsumeQuantity(sourceData);
 		tableSimple = {
 			head: ['Ano', 'Quantidade'],
 			body: tableMapperValues(sourceData, ['consumeYear', 'consumeQuantity']),
+			foot: ['Total', `<code class="code">${total}</code>`],
 		};
 	}
 
