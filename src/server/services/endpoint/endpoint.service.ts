@@ -34,6 +34,9 @@ export class EndpointService {
 				GET: `${BASE_URL}indicator/`,
 				GETALL: `${BASE_URL}indicator/`,
 			},
+			consume: {
+				GETALL: `${BASE_URL}consume/porindicador`,
+			},
 		} as const;
 	}
 }

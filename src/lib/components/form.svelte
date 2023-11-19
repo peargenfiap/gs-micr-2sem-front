@@ -1,9 +1,26 @@
 <script lang="ts">
+	import Tableerror from './tableerror.svelte';
+	import { Table, tableMapperValues, type TableSource } from '@skeletonlabs/skeleton';
+	import type IConsume from '../../interfaces/consume.model';
+
 	export let title: string = 'Detalhes';
 	export let indicatorKey: string;
 	export let odsKey: string;
 	export let indicatorDescription: string;
 	export let indicatorName: string;
+
+	export let sourceData: IConsume[] | undefined;
+
+	$: if (sourceData) {
+		tableSimple = {
+			head: ['Ano', 'Quantidade'],
+			body: tableMapperValues(sourceData, ['consumeYear', 'consumeQuantity']),
+		};
+	}
+
+	console.log('sourceData', sourceData);
+
+	let tableSimple: TableSource;
 </script>
 
 <div class="card bg-surface-50-900-token w-3/5 border-r-4 border-primary-500 px-4 py-8 shadow-xl">
@@ -59,5 +76,15 @@
 				/>
 			</label>
 		</div>
+		{#if sourceData && tableSimple}
+			<h3 class="text-white-700 mb-4 mt-3 text-2xl font-semibold">Métricas</h3>
+			<Table
+				source={tableSimple}
+				class="table-hover mt-2 w-3/4"
+				interactive={false}
+			/>
+		{:else}
+			<Tableerror />
+		{/if}
 	</div>
 </div>

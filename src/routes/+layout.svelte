@@ -14,9 +14,6 @@
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
-	<slot />
 
-	<svelte:fragment slot="footer">
-		<p>oi</p>
-	</svelte:fragment>
+	<slot />
 </AppShell>

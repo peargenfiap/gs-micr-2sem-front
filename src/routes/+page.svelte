@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Integrantes from './../lib/components/integrantes.svelte';
 	import Form from '$lib/components/form.svelte';
 	import { Table, tableMapperValues, initializeStores, type TableSource, Modal, getModalStore } from '@skeletonlabs/skeleton';
 	import bodyImg from '../assets/body-img.svg';
@@ -6,13 +7,16 @@
 	import { onMount } from 'svelte';
 	import { IndicatorApi } from '../server/requests/indicators.api';
 	import { Utils } from '../server/services/utils/utils';
+	import { ConsumeApi } from '../server/requests/consume.api';
+	import type IConsume from '../interfaces/consume.model';
+	import Tableerror from '$lib/components/tableerror.svelte';
+	import Footer from '$lib/components/footer.svelte';
 	initializeStores();
 
 	let sourceData: IIndicator[] | undefined = undefined;
 
 	onMount(async () => {
 		sourceData = await IndicatorApi.list();
-		console.log(sourceData);
 	});
 
 	const modalStore = getModalStore();
@@ -26,10 +30,13 @@
 		};
 	}
 
-	function tableSelectionHandler(event: CustomEvent) {
+	async function tableSelectionHandler(event: CustomEvent) {
 		const ind: IIndicator = Utils.replaceNumbersWithSpecificKeys(event.detail);
 
 		const selectedRowData = sourceData?.find((indicator) => indicator.indicatorKey === ind.indicatorKey);
+
+		const consumes: IConsume[] = await ConsumeApi.list({ indicatorKey: selectedRowData?.indicatorKey } as any);
+		console.log(consumes);
 
 		modalStore.trigger({
 			title: 'Detalhes do Indicador',
@@ -42,6 +49,7 @@
 					indicatorDescription: selectedRowData?.indicatorDescription,
 					indicatorName: selectedRowData?.indicatorName,
 					odsKey: selectedRowData?.odsKey,
+					sourceData: consumes,
 				},
 			},
 		});
@@ -64,16 +72,12 @@
 			on:selected={tableSelectionHandler}
 		/>
 	{:else}
-		<div
-			class="relative mt-56 flex items-center justify-center rounded border border-red-400 bg-red-100 px-4 py-3 text-center text-red-700"
-			role="alert"
-		>
-			<strong class="mr-2 font-bold">Ops! </strong>
-			<span class="block sm:inline"> Desculpe, não foi possível carregar a tabela.</span>
-		</div>
+		<Tableerror />
 	{/if}
 	<Modal />
 </div>
+<Integrantes />
+<Footer />
 
 <style lang="postcss">
 	@keyframes glow {
