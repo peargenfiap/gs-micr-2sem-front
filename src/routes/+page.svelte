@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { Table, tableMapperValues, type TableSource } from '@skeletonlabs/skeleton';
+	import Form from '$lib/components/form.svelte';
+	import { Table, tableMapperValues, initializeStores, type TableSource, Modal, getModalStore } from '@skeletonlabs/skeleton';
 	import bodyImg from '../assets/body-img.svg';
 	import type IIndicator from '../interfaces/Indicator.model';
 	import { onMount } from 'svelte';
 	import { IndicatorApi } from '../server/requests/indicators.api';
+	initializeStores();
 
 	let sourceData: IIndicator[] | undefined = undefined;
 
@@ -11,6 +13,7 @@
 		sourceData = await IndicatorApi.list();
 	});
 
+	const modalStore = getModalStore();
 	let tableSimple: TableSource;
 
 	$: if (sourceData) {
@@ -21,8 +24,37 @@
 		};
 	}
 
-	function tableSelectionHandler(event: Event) {
-		console.log(event);
+	function tableSelectionHandler(event: CustomEvent) {
+		console.log('event', event);
+
+		const ind: any = replaceNumbersWithSpecificKeys(event.detail);
+
+		const selectedRowData = sourceData?.find((indicator) => indicator.indicatorKey === ind.indicatorKey);
+		console.log(selectedRowData);
+		modalStore.trigger({
+			title: 'Detalhes do Indicador',
+			type: 'component',
+			component: {
+				ref: Form,
+				props: {
+					title: 'Detalhes do Indicador',
+					indicatorKey: selectedRowData?.indicatorKey,
+					indicatorDescription: selectedRowData?.indicatorDescription,
+					indicatorName: selectedRowData?.indicatorName,
+					odsKey: selectedRowData?.odsKey,
+				},
+			},
+		});
+	}
+
+	function replaceNumbersWithSpecificKeys(obj: any) {
+		const indicator: any = {};
+		const keys = ['indicatorKey', 'indicatorDescription', 'indicatorName', 'odsKey'];
+
+		keys.forEach((key, index) => {
+			indicator[key] = obj[index];
+		});
+		return indicator;
 	}
 </script>
 
@@ -50,6 +82,7 @@
 			<span class="block sm:inline"> Desculpe, não foi possível carregar a tabela.</span>
 		</div>
 	{/if}
+	<Modal />
 </div>
 
 <style lang="postcss">
