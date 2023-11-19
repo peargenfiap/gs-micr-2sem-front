@@ -18,8 +18,6 @@
 		};
 	}
 
-	console.log('sourceData', sourceData);
-
 	let tableSimple: TableSource;
 </script>
 

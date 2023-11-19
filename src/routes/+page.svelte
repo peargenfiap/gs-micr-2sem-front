@@ -36,7 +36,6 @@
 		const selectedRowData = sourceData?.find((indicator) => indicator.indicatorKey === ind.indicatorKey);
 
 		const consumes: IConsume[] = await ConsumeApi.list({ indicatorKey: selectedRowData?.indicatorKey } as any);
-		console.log(consumes);
 
 		modalStore.trigger({
 			title: 'Detalhes do Indicador',
