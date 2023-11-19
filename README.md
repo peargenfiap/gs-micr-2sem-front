@@ -7,16 +7,13 @@
 
 ## Tecnologia Utilizada
 
-
-
 Este projeto utiliza uma série de tecnologias e ferramentas para o desenvolvimento de microserviços eficientes e modernos. Abaixo está uma lista das principais dependências de desenvolvimento (`devDependencies`) e uma breve explicação de cada uma:
 
-	#Frameworks e Linguagens
-	- **Svelte**
-	- **TypeScript**
+# Frameworks e Linguagens
+- **Svelte**
+- **TypeScript**
 
-- **svelte (^4.0.5)**: Framework de componentes para construir interfaces de usuário web.
-- **typescript (^5.0.0)**: Um superset de JavaScript que adiciona tipos estáticos.
+# Bibliotecas
 - **@skeletonlabs/skeleton (2.5.0)** e **@skeletonlabs/tw-plugin (0.2.4)**: Frameworks e plugins para design e estilização.
 - **vite-plugin-tailwind-purgecss (0.1.3)**: Plugin para remover CSS não utilizado com TailwindCSS.
 - **@tailwindcss/typography (0.5.10)** e **@tailwindcss/forms (0.5.7)**: Plugins do TailwindCSS para tipografia e estilização de formulários.
