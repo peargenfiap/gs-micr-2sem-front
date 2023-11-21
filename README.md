@@ -1,4 +1,4 @@
-# Global Solution - Microservices 2° Semestre
+# Global Solution - Microservices 2° Semestre - Front-End
 
 ## Integrantes
 - Pedro Argentati - RM: 88246
