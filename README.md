@@ -45,3 +45,7 @@ npm run dev -- --open
 ## Métricas de Indicadores (Modal):
 ![image](https://github.com/peargenfiap/gs-micr-2sem-front/assets/115407377/69a4cdb1-9560-4fa9-bbb8-e2411faa7ad8)
 
+# WireFrame
+## Link para o Figma: https://www.figma.com/file/OSktfzplzDPcV9RSz8PKhM/Untitled?type=design&node-id=0-1&mode=design
+
+![image](https://github.com/peargenfiap/gs-micr-2sem-front/assets/115407377/29c2980b-ede8-4160-9d06-30cc233bc5d0)
