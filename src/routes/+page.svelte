@@ -64,9 +64,10 @@
 		/>
 	</div>
 	{#if sourceData && tableSimple}
+		<h3 class="text-white-700 mb-4 mt-10 text-center text-2xl font-semibold">Indicadores da Ods</h3>
 		<Table
 			source={tableSimple}
-			class="mt-20"
+			class="mt-5"
 			interactive={true}
 			on:selected={tableSelectionHandler}
 		/>
