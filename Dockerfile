@@ -1,17 +1,15 @@
-FROM node:18.16.0-alpine3.17
+FROM node:16
 
-RUN mkdir -p /dist/app
-WORKDIR /dist/app
+WORKDIR /usr/src/app
 
-COPY /package.json .
+COPY package*.json ./
+
 RUN npm install
 
 COPY . .
 
 RUN npm run build
 
-RUN npm install -g serve
+EXPOSE 8081
 
-EXPOSE 3001
-
-CMD [ "npm", "run", "dev"]
+CMD ["npm", "run", "dev"]
