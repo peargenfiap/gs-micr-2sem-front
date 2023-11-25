@@ -1,0 +1,116 @@
+{
+  ".svelte-kit/generated/client-optimized/app.js": {
+    "dynamicImports": [
+      ".svelte-kit/generated/client-optimized/nodes/0.js",
+      ".svelte-kit/generated/client-optimized/nodes/1.js",
+      ".svelte-kit/generated/client-optimized/nodes/2.js"
+    ],
+    "file": "_app/immutable/entry/app.59256a09.js",
+    "imports": [
+      "_scheduler.2207c5b5.js",
+      "_index.bbb7b025.js"
+    ],
+    "isEntry": true,
+    "src": ".svelte-kit/generated/client-optimized/app.js"
+  },
+  ".svelte-kit/generated/client-optimized/nodes/0.css": {
+    "file": "_app/immutable/assets/0.e22f4865.css",
+    "src": ".svelte-kit/generated/client-optimized/nodes/0.css"
+  },
+  ".svelte-kit/generated/client-optimized/nodes/0.js": {
+    "css": [
+      "_app/immutable/assets/0.e22f4865.css"
+    ],
+    "file": "_app/immutable/nodes/0.4acd3591.js",
+    "imports": [
+      "_scheduler.2207c5b5.js",
+      "_index.bbb7b025.js",
+      "_index.26daac94.js",
+      "_ProgressBar.svelte_svelte_type_style_lang.bf22c6f0.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": ".svelte-kit/generated/client-optimized/nodes/0.js"
+  },
+  ".svelte-kit/generated/client-optimized/nodes/1.js": {
+    "file": "_app/immutable/nodes/1.b1a496b6.js",
+    "imports": [
+      "_scheduler.2207c5b5.js",
+      "_index.bbb7b025.js",
+      "_singletons.97f93df5.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": ".svelte-kit/generated/client-optimized/nodes/1.js"
+  },
+  ".svelte-kit/generated/client-optimized/nodes/2.css": {
+    "file": "_app/immutable/assets/2.b4770cfe.css",
+    "src": ".svelte-kit/generated/client-optimized/nodes/2.css"
+  },
+  ".svelte-kit/generated/client-optimized/nodes/2.js": {
+    "assets": [
+      "_app/immutable/assets/body-img.b033db71.svg"
+    ],
+    "css": [
+      "_app/immutable/assets/2.b4770cfe.css"
+    ],
+    "file": "_app/immutable/nodes/2.d292f6fd.js",
+    "imports": [
+      "_scheduler.2207c5b5.js",
+      "_index.bbb7b025.js",
+      "_ProgressBar.svelte_svelte_type_style_lang.bf22c6f0.js",
+      "_index.26daac94.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": ".svelte-kit/generated/client-optimized/nodes/2.js"
+  },
+  "ProgressBar.css": {
+    "file": "_app/immutable/assets/ProgressBar.4f1e9ba5.css",
+    "src": "ProgressBar.css"
+  },
+  "_ProgressBar.svelte_svelte_type_style_lang.bf22c6f0.js": {
+    "css": [
+      "_app/immutable/assets/ProgressBar.4f1e9ba5.css"
+    ],
+    "file": "_app/immutable/chunks/ProgressBar.svelte_svelte_type_style_lang.bf22c6f0.js",
+    "imports": [
+      "_index.26daac94.js",
+      "_scheduler.2207c5b5.js"
+    ]
+  },
+  "_index.26daac94.js": {
+    "file": "_app/immutable/chunks/index.26daac94.js",
+    "imports": [
+      "_scheduler.2207c5b5.js"
+    ]
+  },
+  "_index.bbb7b025.js": {
+    "file": "_app/immutable/chunks/index.bbb7b025.js",
+    "imports": [
+      "_scheduler.2207c5b5.js"
+    ]
+  },
+  "_scheduler.2207c5b5.js": {
+    "file": "_app/immutable/chunks/scheduler.2207c5b5.js"
+  },
+  "_singletons.97f93df5.js": {
+    "file": "_app/immutable/chunks/singletons.97f93df5.js",
+    "imports": [
+      "_index.26daac94.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
+    "file": "_app/immutable/entry/start.d34b0718.js",
+    "imports": [
+      "_scheduler.2207c5b5.js",
+      "_singletons.97f93df5.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js"
+  },
+  "src/assets/body-img.svg": {
+    "file": "_app/immutable/assets/body-img.b033db71.svg",
+    "src": "src/assets/body-img.svg"
+  }
+}
